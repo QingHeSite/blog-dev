@@ -4,7 +4,7 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   title: "没有帽衫的笔记",
   description: "经验,笔记,优化方案",
-  head: [['link', {rel:'icon', href: '/favicon.ico'}]],
+  head: [['link', {rel:'icon',type:'image/png', href: '/favicon.ico'}]],
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
@@ -42,9 +42,11 @@ export default defineConfig({
         ]
       },
     ],
-
     socialLinks: [
       { icon: 'github', link: 'https://github.com/QingHeSite' }
-    ]
+    ],
+    search: {
+      provider: 'local'
+    }
   }
 })
