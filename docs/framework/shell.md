@@ -1,5 +1,5 @@
 
-# shell脚本
+# 复制脚本
 
 ```shell
 #!/bin/bash
@@ -32,6 +32,7 @@ read -p "press enter end"
 ```
 
 ```shell
+# 配合环境变量使用
 // app仓库 public路径
 PRO_APP_PUBLIC = D:\pro_c_app\public
 
