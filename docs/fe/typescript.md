@@ -1,8 +1,4 @@
----
-permalink: '/core/typescript/'
----
-
-# Typescript
+<!-- # Typescript
 ### type和interface有什么区别
 #### 相同点
 ---
@@ -58,7 +54,7 @@ interface Todo {
 }
  
 type TodoPreview = Pick<Todo, "title" | "completed">;
- 
+
 const todo: TodoPreview = {
   title: "Clean room",
   completed: false,
@@ -88,4 +84,4 @@ const todo2 = updateTodo(todo1, {
 ```
 
 
-
+ -->
