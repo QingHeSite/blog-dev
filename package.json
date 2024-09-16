@@ -5,7 +5,6 @@
     "docs:preview": "vitepress preview docs"
   },
   "devDependencies": {
-    "gitalk": "https://github.com/LibraHeresy/gitalk.git",
     "vitepress": "^1.3.4"
   },
   "dependencies": {
