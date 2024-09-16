@@ -3,9 +3,9 @@
 layout: home
 
 hero:
-  name: "前端开发笔记"
-  text: "经验,笔记,优化方案"
-  tagline: 
+  name: "没有帽衫的笔记"
+  # text: "前端开发经验,前端bug处理"
+  tagline: 开发经验, bug处理
   actions:
     - theme: brand
       text: 开始
@@ -16,6 +16,12 @@ hero:
 
 features:
   - title: 状态
-    details: 积极更新中...
+    details: 更新中...
 ---
+
+### 联系
+- wechat: WT425012251
+- email: skymrwt@outlook.com
+- github: https://github.com/QingHeSite
+- address: 合肥
 
