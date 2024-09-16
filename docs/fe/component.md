@@ -11,6 +11,10 @@
 js库技术栈可使用`rollup`+`ts`搭建
 目录结构
 ```
+├── config
+│   └── rollup.ts
+├── package.json
+└── typescript.json
 ```
 #### rollup配置
 
