@@ -21,6 +21,7 @@ export default defineConfig({
           {text: '拖拽事件', link: '/fe/drag'},
           {text: '下载文件', link: '/fe/download'},
           {text: '图片压缩', link: '/fe/img-compress'},
+          {text: '组件库-设计&开发', link: '/fe/component'},
           {text: '优化-滚动条样式', link: '/fe/scroll-bar'},
           {text: '优化-页面加载', link: '/fe/optimization-page-load'},
         ]
