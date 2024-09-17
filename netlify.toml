@@ -1,13 +1,4 @@
-[build]
-  command = "pnpm docs:build"  # 或者 "yarn docs:build"，构建 VitePress 的命令
-  publish = "docs/.vitepress/dist"  # VitePress 构建输出目录，通常为 .vitepress/dist
-
 [[redirects]]
   from = "/blog-dev/*"
-  to = "/blog-dev/:splat"
-  status = 200
-
-[[redirects]]
-  from = "/*"
   to = "/blog-dev/index.html"
   status = 200
