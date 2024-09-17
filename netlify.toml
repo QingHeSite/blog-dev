@@ -1,13 +1,7 @@
 # 针对 .js 文件的排除
 [[redirects]]
-  from = "/blog-dev/*.js"
-  to = "/:splat"
-  status = 200
-
-# 针对 .css 文件的排除
-[[redirects]]
-  from = "/blog-dev/*.css"
-  to = "/:splat"
+  from = "/blog-dev/assets/*"
+  to = "/assets/:splat"
   status = 200
 
 # 针对其他静态资源（如图片、字体等）的排除
