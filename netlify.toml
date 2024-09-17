@@ -1,6 +1,5 @@
-
 [build]
-  publish = "./docs/.vitepress/dist"  # 指定静态文件所在的目录。如果没有构建步骤，可以直接指向项目根目录或 dist/public 文件夹。
+  publish = "build"  # 如果没有构建步骤，请设置为项目根目录或实际的静态文件夹。
 
 [[redirects]]
   from = "/blog-dev/*"
