@@ -1,4 +1,23 @@
+# 针对 .js 文件的排除
 [[redirects]]
-from = "/blog-dev/*"
-to = "/"
-status = 200
+  from = "/blog-dev/*.js"
+  to = "/blog-dev/:splat"
+  status = 200
+
+# 针对 .css 文件的排除
+[[redirects]]
+  from = "/blog-dev/*.css"
+  to = "/blog-dev/:splat"
+  status = 200
+
+# 针对其他静态资源（如图片、字体等）的排除
+[[redirects]]
+  from = "/blog-dev/*.{png,jpg,jpeg,gif,svg,ico}"
+  to = "/blog-dev/:splat"
+  status = 200
+
+# 其他所有非静态资源的重定向到 index.html
+[[redirects]]
+  from = "/blog-dev/*"
+  to = "/blog-dev/index.html"
+  status = 200
