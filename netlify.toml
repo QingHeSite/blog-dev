@@ -1,4 +1,4 @@
 [[redirects]]
-from = "/pass-through"
+from = "/blog-dev/*"
 to = "/index.html"
 status = 200
