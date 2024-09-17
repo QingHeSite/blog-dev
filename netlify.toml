@@ -1,5 +1,6 @@
 [build]
-  publish = "build"  # 如果没有构建步骤，请设置为项目根目录或实际的静态文件夹。
+  command = "pnpm docs:build"  # 或者 "yarn docs:build"，构建 VitePress 的命令
+  publish = "docs/.vitepress/dist"  # VitePress 构建输出目录，通常为 .vitepress/dist
 
 [[redirects]]
   from = "/blog-dev/*"
