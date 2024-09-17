@@ -1,7 +1,7 @@
 [build]
   publish = "./docs/.vitepress/dist"  # 这是构建输出目录，确保与实际输出目录匹配
 
-[[redirects]]
+[redirects]
   from = "/blog-dev/*"
   to = "/blog-dev/index.html"
   status = 200
