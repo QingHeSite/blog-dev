@@ -2,6 +2,7 @@ import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
+  base: '/blogDev/',
   title: "没有帽衫的笔记",
   description: "经验,笔记,优化方案",
   head: [['link', {rel:'icon',type:'image/png', href: '/favicon.ico'}]],
