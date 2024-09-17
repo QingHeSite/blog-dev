@@ -13,5 +13,5 @@
 # 其他所有非静态资源的重定向到 index.html
 [[redirects]]
   from = "/blog-dev/*"
-  to = "/index.html"
+  to = "/:splat"
   status = 200
