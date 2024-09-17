@@ -1,5 +1,5 @@
 [build]
-  publish = "dist"  # 这是构建输出目录，确保与实际输出目录匹配
+  publish = "./docs/.vitepress/dist"  # 这是构建输出目录，确保与实际输出目录匹配
 
 [[redirects]]
   from = "/blog-dev/*"
