@@ -1,4 +1,13 @@
+
+[build]
+  publish = "./docs/.vitepress/dist"  # 指定静态文件所在的目录。如果没有构建步骤，可以直接指向项目根目录或 dist/public 文件夹。
+
+[[redirects]]
+  from = "/blog-dev/*"
+  to = "/blog-dev/:splat"
+  status = 200
+
 [[redirects]]
   from = "/*"
-  to = "/blog-dev/"
+  to = "/blog-dev/index.html"
   status = 200
