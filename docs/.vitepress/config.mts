@@ -30,6 +30,7 @@ export default defineConfig({
       {
         text: '框架类',
         items: [
+          {text: 'Web Cli', link: '/framework/web-cli'},
           {text: 'Docker', link: '/framework/docker'},
           {text: 'Win & Linux 常用命令', link: '/framework/command'},
           {text: 'Git', link: '/framework/git'},
