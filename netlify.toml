@@ -1,7 +1,3 @@
-[build]
-  publish = "build"  # 这是项目打包后输出的文件夹，确保路径正确
-  base = "/blog-dev/" # 如果你的项目在一个子目录下，比如 /blog-dev
-
 [[redirects]]
   from = "/*"
   to = "/blog-dev/"
