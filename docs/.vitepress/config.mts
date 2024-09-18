@@ -6,7 +6,12 @@ export default defineConfig({
   base: base,
   title: "没有帽衫的笔记",
   description: "经验,笔记,优化方案",
-  head: [['link', {rel:'icon',type:'image/png', href: base + 'favicon.ico'}]],
+  head: [['link', {rel:'icon',type:'image/png', href: base + 'favicon.ico'}],
+['script', {}, `(function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "o51zyfyzhx");`]],
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
