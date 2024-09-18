@@ -15,3 +15,11 @@ head:
 3. 可维护性高
 4. 可复用性强
 
+### 使用到的插件库
+- commander@12.1.0: 命令行解析工具
+- inquirer@10.1.8: 命令行交互工具
+- chalk@4.1.2: 命令行输出颜色工具
+- ora@5.4.1: 命令行loading工具
+- download-git-repo: 下载github public仓库
+- ora: 命令行loading工具
+
