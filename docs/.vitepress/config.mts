@@ -38,13 +38,13 @@ export default defineConfig({
           {text: 'Shell', link: '/framework/shell'},
         ]
       },
-      {
-        text: 'Examples',
-        items: [
-          { text: 'Markdown Examples', link: '/fe/markdown-examples' },
-          { text: 'Runtime API Examples', link: '/api-examples' }
-        ]
-      },
+      // {
+      //   text: 'Examples',
+      //   items: [
+      //     { text: 'Markdown Examples', link: '/fe/markdown-examples' },
+      //     { text: 'Runtime API Examples', link: '/api-examples' }
+      //   ]
+      // },
     ],
     socialLinks: [
       { icon: 'github', link: 'https://github.com/QingHeSite' }
