@@ -1,6 +1,8 @@
 # Vue 用法(3.5+)
 ## 路由 vue-router
+
 ### 全局
+
 #### 前置钩子-beforeEach
 场景
 - 权限判断
@@ -25,6 +27,7 @@ const router = createRouter({ ... })
 #### 全局解析守卫-beforeResolve
 
 执行时机：在导航被确认之前，同时在所有组件内守卫和异步路由组件被解析之后。
+
 例如: pageA > pageB
 `beforeEach` > `组件内守卫-beforeRouterEnter` > `beforeResolve`
 只有当`beforeResolve`确认后, pageB才会展示
