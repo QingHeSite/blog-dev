@@ -9,7 +9,7 @@ hero:
   actions:
     - theme: brand
       text: 开始
-      link: /fe/es-commonjs
+      link: /fe/vue
     # - theme: alt
     #   text: API Examples
     #   link: /api-examples
