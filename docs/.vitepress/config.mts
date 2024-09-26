@@ -45,7 +45,13 @@ export default defineConfig({
           {text: 'Git', link: '/framework/git'},
           {text: 'Shell', link: '/framework/shell'},
         ]
-      },
+      },{
+        text: '工具',
+        base: '/pages-tool/',
+        items: [
+          {text: 'Win11激活', link: 'win11'}
+        ]
+      }
       // {
       //   text: 'Examples',
       //   items: [
