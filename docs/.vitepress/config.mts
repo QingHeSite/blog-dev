@@ -11,7 +11,9 @@ export default defineConfig({
         c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
         t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
         y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "o51zyfyzhx");`]],
+    })(window, document, "clarity", "script", "o51zyfyzhx");`],
+  [ "meta", { name: "keywords", content: "前端,Vue,Es Vs Commonjs,Typescript,如何处理拖拽事件,下载文件,图片压缩,组件库设计,组件库设计开发,缓存,优化-滚动条样式,优化-页面加载,框架类,Web Cli,npm私有仓库搭建,Docker,Win和Linux 常用命令,Git,Shell,工具,Win11激活" }],
+  ],
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
