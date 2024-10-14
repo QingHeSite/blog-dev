@@ -1,7 +1,7 @@
 # 页面加载
 
 ## script 标签的 async 和 defer
-**async**: 异步加载，加载完成后立即执行
+**async**: 异步加载，加载完成后立即执行, 执行会阻塞页面渲染
 
 **defer**: 异步加载，加载完成后在 DOMContentLoaded 事件后执行(推荐使用)
 
