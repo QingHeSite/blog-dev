@@ -14,5 +14,5 @@
     页面dom解析完成,资源文件加载完成
 
 
-![解析顺序图](../assets/image/async-defer.png)
+![解析顺序图](../assets/image/async-defer.jpg)
 
