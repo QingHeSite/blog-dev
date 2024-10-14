@@ -27,6 +27,7 @@ export default defineConfig({
         text: '前端',
         items: [
           {text: 'Vue', link: '/fe/vue'},
+          {text: '页面加载', link: '/fe/page-load'},
           {text: 'Es Vs Commonjs', link: '/fe/es-commonjs'},
           {text: 'Typescript', link: '/fe/typescript'},
           {text: '拖拽事件', link: '/fe/drag'},
