@@ -27,6 +27,7 @@ export default defineConfig({
         text: '前端',
         items: [
           {text: 'Vue', link: '/fe/vue'},
+          {text: '鸿蒙开发', link: '/fe/harmony'},
           {text: '页面加载', link: '/fe/page-load'},
           {text: 'Es Vs Commonjs', link: '/fe/es-commonjs'},
           {text: 'Typescript', link: '/fe/typescript'},

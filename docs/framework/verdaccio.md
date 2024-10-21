@@ -1,3 +1,13 @@
+---
+head:
+  - - meta
+    - name: description
+      content: 前端搭建npm私有仓库
+  - - meta
+    - name: keywords
+      content: 前端搭建私有仓库,verdaccio使用,前端如何搭建私有仓库,前端搭建npm私有仓库,npm私有仓库
+---
+
 # verdaccio (npm私有仓库搭建)
 
 ## 部署

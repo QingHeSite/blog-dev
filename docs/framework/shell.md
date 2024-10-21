@@ -1,3 +1,12 @@
+---
+head:
+  - - meta
+    - name: description
+      content: shell 使用
+  - - meta
+    - name: keywords
+      content: shell使用,前端shell使用,前端shell,shell在web开发中的使用,在前端开发中使用shell,基本shell脚本
+---
 
 # 复制脚本
 
