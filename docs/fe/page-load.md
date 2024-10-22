@@ -1,5 +1,14 @@
 # 页面加载
 
+## [页面渲染 工作原理](https://developer.mozilla.org/zh-CN/docs/Web/Performance/How_browsers_work)
+1. 导航
+2. DNS查询
+3. TCP三次握手
+4. TSL协商
+5. 响应(建立连接,发送请求, 响应请求)
+6. 构建DOM树
+    dom树描述了文档内容, <html>为根节点
+
 ## script 标签的 async 和 defer
 **async**: 异步加载，加载完成后立即执行, 执行会阻塞页面渲染
 
