@@ -15,6 +15,12 @@ head:
 1. [ScrollTrigger](https://gsap.com/docs/v3/Plugins/ScrollTrigger/?page=1)
 2. [scrollmagic](https://scrollmagic.io/)
 
+#### 手势识别
+[hammerjs](https://hammerjs.github.io/getting-started/)
+
+#### 资源预加载
+[pxloader](https://thinkpixellab.com/pxloader/)
+
 ### 本地localhost使用https协议
 [anchor.dev](https://anchor.dev/)
 
