@@ -15,6 +15,10 @@ head:
 1. [ScrollTrigger](https://gsap.com/docs/v3/Plugins/ScrollTrigger/?page=1)
 2. [scrollmagic](https://scrollmagic.io/)
 
+#### threejs 地球模型
+[three-globe](https://www.npmjs.com/package/three-globe)
+
+
 #### 手势识别
 [hammerjs](https://hammerjs.github.io/getting-started/)
 
