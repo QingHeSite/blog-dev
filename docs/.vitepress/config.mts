@@ -55,7 +55,8 @@ export default defineConfig({
         text: '工具',
         base: '/pages-tool/',
         items: [
-          {text: 'Win11激活', link: 'win11'}
+          {text: 'Win11激活', link: 'win11'},
+          {text: '苹果日历订阅', link: 'apple-calendar'},
         ]
       }
       // {
