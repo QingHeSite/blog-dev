@@ -103,6 +103,7 @@ docker-compose up -d
         bin/elasticsearch-service-tokens create elastic/kibana kibana
         ```
         重启
+        
         ```
         docker-compose restart kibana
         ```
