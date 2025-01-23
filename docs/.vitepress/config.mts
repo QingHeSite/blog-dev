@@ -50,6 +50,7 @@ export default defineConfig({
           {text: 'Git', link: '/framework/git'},
           {text: 'Shell', link: '/framework/shell'},
           {text: '工具库', link: '/framework/packages'},
+          {text: 'kibana分析平台', link: '/framework/kibana'},
         ]
       },{
         text: '工具',
