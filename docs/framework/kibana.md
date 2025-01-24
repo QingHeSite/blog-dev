@@ -1,7 +1,7 @@
 
 # kibana分析平台搭建
 
-### 配置文件
+## 配置文件
 
 ##### docker-compose.yml
 ```yml
@@ -95,7 +95,7 @@ i18n.locale: "zh-CN"
 docker-compose up -d
 ```
 
-### 错误处理
+## 错误处理
 - kibana无法启动
     1. 令牌失效
         ```shell
@@ -108,9 +108,9 @@ docker-compose up -d
         docker-compose restart kibana
         ```
 
-### web 使用
+## web 使用
 
-#### 接口fetch提交
+### 接口fetch提交
 - user-events: 为索引名
 
 ```js
@@ -127,7 +127,7 @@ fetch('http://localhost:9200/user-events/_doc', {
 });
 ```
 
-#### 工具包使用提交
+### 工具包使用提交
 ```json
 import { init as initApm } from '@elastic/apm-rum';
 
