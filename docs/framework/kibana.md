@@ -107,3 +107,43 @@ docker-compose up -d
         ```
         docker-compose restart kibana
         ```
+
+### web 使用
+
+#### 接口fetch提交
+- user-events: 为索引名
+
+```js
+fetch('http://localhost:9200/user-events/_doc', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({
+    event_name: 'submit_click',
+    event_count: 1,
+    timestamp: new Date().toISOString()
+  })
+});
+```
+
+#### 工具包使用提交
+```json
+import { init as initApm } from '@elastic/apm-rum';
+
+let apm = initApm({
+  serviceName: 'apm-1',
+  serverUrl: 'http://localhost:8202',
+  environment: 'development',
+  transactionSampleRate: 1.0, // 采样率设为 100%
+  instrument: false,
+  flushInterval: 0,
+  logLevel: 'debug', // 启用调试日志
+
+});
+
+const transaction = apm.startTransaction('app_vue', 'loaded');
+  setTimeout(() => {
+    transaction!.end();
+  }, 10);
+```
