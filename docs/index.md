@@ -19,9 +19,15 @@ features:
     details: 更新中...
 ---
 
+<script setup>
+import Globe from './components/globe/index.vue'
+</script>
+
 ### 联系
 - wechat: WT425012251
 - email: skymrwt@outlook.com
 - github: https://github.com/QingHeSite
 - address: 合肥
 
+
+<Globe/>
