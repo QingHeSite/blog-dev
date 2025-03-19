@@ -20,7 +20,6 @@
 </template>
 <script setup>
 import { ref, onMounted, useTemplateRef, nextTick } from "vue";
-
 import countries from "./files/globe-data-min.json";
 import travelHistory from "./files/my-flights.json";
 import airportHistory from "./files/my-airports.json";
@@ -35,12 +34,17 @@ onMounted(async () => {
         const { OrbitControls } = await import("three/examples/jsm/controls/OrbitControls.js");
         const ThreeGlobe = (await import("three-globe")).default;
 
-        let renderer, camera, scene, controls;
+        var renderer, camera, scene, controls;
         let mouseX = 0;
         let mouseY = 0;
         let windowHalfX = window.innerWidth / 2;
         let windowHalfY = window.innerHeight / 2;
-        let Globe;
+        var Globe;
+        const renderSize = 700
+        init();
+        initGlobe();
+        onWindowResize();
+        animate();
 
         // SECTION Initializing core ThreeJS elements
         function init() {
@@ -99,7 +103,7 @@ onMounted(async () => {
             controls.maxDistance = 500;
             controls.rotateSpeed = 0.8;
             controls.zoomSpeed = 1;
-            controls.autoRotate = false;
+            controls.autoRotate = true;
 
             controls.minPolarAngle = Math.PI / 3.5;
             controls.maxPolarAngle = Math.PI - Math.PI / 3;
@@ -145,8 +149,8 @@ onMounted(async () => {
                         return e.status ? 0.5 : 0.3;
                     })
                     .arcDashLength(0.9)
-                    .arcDashGap(0)
-                    .arcDashAnimateTime(400) // 弧线动画
+                    .arcDashGap(4)
+                    .arcDashAnimateTime(1000)
                     .arcsTransitionDuration(1000)
                     .arcDashInitialGap((e) => e.order * 1)
                     .labelsData(airportHistory.airports)
@@ -166,10 +170,8 @@ onMounted(async () => {
                     .pointRadius(0.05);
             }, 1000);
 
-            // Globe.rotateY(-Math.PI * (5 / 5));
-            Globe.rotateY(200);
-            Globe.rotateZ(Math.PI / 6);
-            // Globe.
+            Globe.rotateY(-Math.PI * (5 / 9));
+            Globe.rotateZ(-Math.PI / 6);
             const globeMaterial = Globe.globeMaterial();
             globeMaterial.color = new Color(0x3a228a);
             globeMaterial.emissive = new Color(0x220038);
@@ -202,19 +204,12 @@ onMounted(async () => {
             //     ? (mouseX / 2 - camera.position.x) * 0.005
             //     : 0;
             // camera.position.y += (-mouseY / 2 - camera.position.y) * 0.005;
-            // camera.position.y = 90
             camera.lookAt(scene.position);
             controls.update();
             renderer.render(scene, camera);
-            Globe.rotation.y -= 0.002;
             requestAnimationFrame(animate);
         }
 
-        init();
-        initGlobe();
-        animate();
-
-        requestAnimationFrame(animate);
     }
 });
 </script>
