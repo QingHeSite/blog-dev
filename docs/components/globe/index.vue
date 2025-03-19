@@ -58,7 +58,7 @@ onMounted(async () => {
 
             // Initialize camera, light
             camera = new PerspectiveCamera();
-            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.aspect = renderSize / renderSize;
             camera.updateProjectionMatrix();
 
             var dLight = new DirectionalLight(0xffffff, 0.8);
