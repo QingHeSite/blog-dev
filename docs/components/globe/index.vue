@@ -1,7 +1,7 @@
 <style lang="scss" scoped>
 .globe-container {
-    width: 500px;
-    height: 500px;
+    width: 700px;
+    height: 700px;
     border-radius: 10px;
     overflow: hidden;
     display: flex;
@@ -19,7 +19,7 @@
     </div>
 </template>
 <script setup>
-import { ref, onMounted, useTemplateRef } from "vue";
+import { ref, onMounted, useTemplateRef, nextTick } from "vue";
 
 import countries from "./files/globe-data-min.json";
 import travelHistory from "./files/my-flights.json";
@@ -30,6 +30,7 @@ const renderSize = 700;
 
 onMounted(async () => {
     if (typeof window !== "undefined") {
+        await nextTick();
         const { WebGLRenderer, Scene, PerspectiveCamera, AmbientLight, DirectionalLight, PointLight, Color, Fog } = await import("three");
         const { OrbitControls } = await import("three/examples/jsm/controls/OrbitControls.js");
         const ThreeGlobe = (await import("three-globe")).default;
@@ -41,6 +42,7 @@ onMounted(async () => {
         let windowHalfY = window.innerHeight / 2;
         let Globe;
 
+        // SECTION Initializing core ThreeJS elements
         function init() {
             // Initialize renderer
             renderer = new WebGLRenderer({ antialias: true, alpha: true });
@@ -56,7 +58,7 @@ onMounted(async () => {
 
             // Initialize camera, light
             camera = new PerspectiveCamera();
-            camera.aspect = renderSize / renderSize;
+            camera.aspect = window.innerWidth / window.innerHeight;
             camera.updateProjectionMatrix();
 
             var dLight = new DirectionalLight(0xffffff, 0.8);
@@ -106,6 +108,7 @@ onMounted(async () => {
             // document.addEventListener("mousemove", onMouseMove);
         }
 
+        // SECTION Globe
         function initGlobe() {
             // Initialize the Globe
             Globe = new ThreeGlobe({
@@ -163,8 +166,10 @@ onMounted(async () => {
                     .pointRadius(0.05);
             }, 1000);
 
-            Globe.rotateY(-Math.PI * (5 / 9));
-            Globe.rotateZ(Math.PI / 3);
+            // Globe.rotateY(-Math.PI * (5 / 5));
+            Globe.rotateY(200);
+            Globe.rotateZ(Math.PI / 6);
+            // Globe.
             const globeMaterial = Globe.globeMaterial();
             globeMaterial.color = new Color(0x3a228a);
             globeMaterial.emissive = new Color(0x220038);
@@ -177,21 +182,32 @@ onMounted(async () => {
             scene.add(Globe);
         }
 
+        function onMouseMove(event) {
+            mouseX = event.clientX - windowHalfX;
+            mouseY = event.clientY - windowHalfY;
+            // console.log("x: " + mouseX + " y: " + mouseY);
+        }
+
         function onWindowResize() {
             camera.aspect = renderSize / renderSize;
             camera.updateProjectionMatrix();
+            windowHalfX = renderSize / 1.5;
+            windowHalfY = renderSize / 1.5;
             renderer.setSize(renderSize, renderSize);
         }
 
         function animate() {
             // camera.position.x +=
-            //     Math.abs(mouseX) <= windowHalfX / 2
-            //         ? (mouseX / 2 - camera.position.x) * 0.005
-            //         : 0;
+            //   Math.abs(mouseX) <= windowHalfX / 2
+            //     ? (mouseX / 2 - camera.position.x) * 0.005
+            //     : 0;
             // camera.position.y += (-mouseY / 2 - camera.position.y) * 0.005;
-            requestAnimationFrame(animate);
+            // camera.position.y = 90
+            camera.lookAt(scene.position);
             controls.update();
             renderer.render(scene, camera);
+            Globe.rotation.y -= 0.002;
+            requestAnimationFrame(animate);
         }
 
         init();
