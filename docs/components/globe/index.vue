@@ -1,7 +1,7 @@
 <style lang="scss" scoped>
 .globe-container {
-    width: 700px;
-    height: 700px;
+    width: 40vw;
+    height: 40vw;
     border-radius: 10px;
     overflow: hidden;
     display: flex;
@@ -9,8 +9,8 @@
     align-items: center;
     // border: 1px solid #000;
     position: fixed;
-    right: 0px;
-    bottom: 2px;
+    top: 40px;
+    right: 2px;
     z-index: 1000;
 }
 </style>
@@ -25,7 +25,10 @@ import travelHistory from "./files/my-flights.json";
 import airportHistory from "./files/my-airports.json";
 
 const globeContainer = useTemplateRef("globeContainer");
-const renderSize = 700;
+// const renderSize = 700;
+const getRenderSize = () => {
+    return window.innerWidth*0.4
+}
 
 onMounted(async () => {
     if (typeof window !== "undefined") {
@@ -40,7 +43,7 @@ onMounted(async () => {
         let windowHalfX = window.innerWidth / 2;
         let windowHalfY = window.innerHeight / 2;
         var Globe;
-        const renderSize = 700
+        let renderSize = getRenderSize();
         init();
         initGlobe();
         onWindowResize();
@@ -191,6 +194,7 @@ onMounted(async () => {
         }
 
         function onWindowResize() {
+            renderSize = getRenderSize();
             camera.aspect = renderSize / renderSize;
             camera.updateProjectionMatrix();
             windowHalfX = renderSize / 1.5;
