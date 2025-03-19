@@ -10,7 +10,7 @@
     // border: 1px solid #000;
     position: fixed;
     right: 0px;
-    bottom: 0px;
+    bottom: 2px;
     z-index: 1000;
 }
 </style>
