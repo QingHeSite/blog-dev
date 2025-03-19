@@ -9,8 +9,8 @@
     align-items: center;
     // border: 1px solid #000;
     position: fixed;
-    right: 40px;
-    bottom: 40px;
+    right: 0px;
+    bottom: 0px;
     z-index: 1000;
 }
 </style>
