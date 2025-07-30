@@ -27,17 +27,18 @@ import airportHistory from "./files/my-airports.json";
 const globeContainer = useTemplateRef("globeContainer");
 // const renderSize = 700;
 const getRenderSize = () => {
-    return window.innerWidth*0.4
+    return window.innerWidth * 0.4
 }
 
 onMounted(async () => {
     if (typeof window !== "undefined") {
         await nextTick();
-        const { WebGLRenderer, Scene, PerspectiveCamera, AmbientLight, DirectionalLight, PointLight, Color, Fog } = await import("three");
+        const { WebGLRenderer, Scene, PerspectiveCamera, AmbientLight, DirectionalLight, PointLight, Color, Fog, Mesh, SphereGeometry, TextureLoader, MeshPhongMaterial } = await import("three");
         const { OrbitControls } = await import("three/examples/jsm/controls/OrbitControls.js");
+        const { TrackballControls } = await import("three/examples/jsm/controls/TrackballControls.js")
         const ThreeGlobe = (await import("three-globe")).default;
 
-        var renderer, camera, scene, controls;
+        var renderer, camera, scene, controls, tbControls;
         let mouseX = 0;
         let mouseY = 0;
         let windowHalfX = window.innerWidth / 2;
@@ -171,6 +172,7 @@ onMounted(async () => {
                     .pointsMerge(true)
                     .pointAltitude(0.07)
                     .pointRadius(0.05);
+
             }, 1000);
 
             Globe.rotateY(-Math.PI * (5 / 9));
@@ -183,7 +185,13 @@ onMounted(async () => {
 
             // NOTE Cool stuff
             // globeMaterial.wireframe = true;
+            console.log('globe', Globe);
 
+            // const Clouds = new Mesh(new SphereGeometry(Globe.getGlobeRadius() * (1 + CLOUDS_ALT), 75, 75));
+            // new TextureLoader().load(CLOUDS_IMG_URL, cloudsTexture => {
+            //     Clouds.material = new MeshPhongMaterial({ map: cloudsTexture, transparent: true });
+            // });
+            // Globe.add(Clouds);
             scene.add(Globe);
         }
 
@@ -208,8 +216,9 @@ onMounted(async () => {
             //     ? (mouseX / 2 - camera.position.x) * 0.005
             //     : 0;
             // camera.position.y += (-mouseY / 2 - camera.position.y) * 0.005;
-            camera.lookAt(scene.position);
+            // camera.lookAt(scene.position);
             controls.update();
+            // tbControls.update();
             renderer.render(scene, camera);
             requestAnimationFrame(animate);
         }

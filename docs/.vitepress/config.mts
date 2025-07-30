@@ -26,6 +26,7 @@ export default defineConfig({
       {
         text: '前端',
         items: [
+          {text: 'threejs和map', link: '/fe/threejs'},
           {text: 'Vue', link: '/fe/vue'},
           {text: '鸿蒙开发', link: '/fe/harmony'},
           {text: '页面加载', link: '/fe/page-load'},

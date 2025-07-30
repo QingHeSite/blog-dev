@@ -52,4 +52,57 @@ CMD ["sh", "ls", "-a" ]
 - 删除所有停止的容器
   `docker container prune`
 - 从镜像启动容器(见上基本步骤2)
+
+---
+
+  ### nextjs镜像部署dockerflie
+```dockerfile
+# ===== 构建阶段 =====
+FROM node:20-alpine AS builder
+WORKDIR /app
+
+# 复制全部源码
+COPY . .
+
+RUN npm install --registry=https://registry.npmmirror.com
+
+RUN npm run build:prod
+
+# ===== 运行阶段 =====
+FROM node:20-alpine AS runner
+WORKDIR /app
+
+COPY --from=builder /app/.next/standalone ./
+COPY --from=builder /app/.next/static ./.next/static
+COPY --from=builder /app/public ./public
+
+COPY --from=builder /app/package.json ./
+
+EXPOSE 3000
+
+CMD ["node", "server.js"]
+```
+
+配置.dockerignore文件
+```ignore
+node_modules
+.pnpm
+.next/cache
+.next/trace
+.git
+.gitignore
+.DS_Store
+.vscode
+npm-debug.log
+yarn-error.log
+*.swp
+*.tmp
+*.log
+```
+
+执行
+```shell
+docker build -f Dockerfile -t $IMAGE_NAME .
+docker run -d --name $CONTAINER_NAME -p 6183:3000 $IMAGE_NAME
+```
   
