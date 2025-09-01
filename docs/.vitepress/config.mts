@@ -64,7 +64,7 @@ export default defineConfig({
       {
         text: 'AI',
         items: [
-          {text: 'AI工具', link: '/pages-ai/ai'},
+          {text: 'Claude', link: '/pages-ai/ai'},
         ]
       }
       // {
