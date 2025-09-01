@@ -60,6 +60,12 @@ export default defineConfig({
           {text: 'Win11激活', link: 'win11'},
           {text: '苹果日历订阅', link: 'apple-calendar'},
         ]
+      },
+      {
+        text: 'AI',
+        items: [
+          {text: 'AI工具', link: '/pages-ai/ai'},
+        ]
       }
       // {
       //   text: 'Examples',
